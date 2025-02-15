@@ -4,8 +4,8 @@ from sys import argv
 from subprocess import PIPE, Popen
 
 
-def run(server_ip=argv[1], port=argv[2]):
-    """Run script. Before use two arguments (IP and port). Ex: python rsh.py 192.168.0.1 8888. Works with IPv4."""
+def run(server_ip=argv[1], port=8888):
+    """Run script. Before use an argument (IP, port is binded to 8888 already). Ex: python rsh.py 192.168.0.1. Works with IPv4."""
     try:
         rsh_client = socket(AF_INET, SOCK_STREAM)
         rsh_client.connect((server_ip, port))
